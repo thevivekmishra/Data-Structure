@@ -36,10 +36,11 @@ double divide(int dividend, int divisor)
     }
 
     // code for decimal point
+
     double finalAns = ans;
     double precise;
     double step = 0.1;
-    cout << "enter the precision limit :";
+    cout << "enter the precision limit to know the correct ans :";
     cin >> precise;
 
     for (double i = 0; i < precise; i++)

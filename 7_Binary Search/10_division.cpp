@@ -2,12 +2,18 @@
 using namespace std;
 
 // function
-int divide(int dividend, int divisor)
+double divide(int dividend, int divisor)
 {
+    if (divisor == 0)
+    {
+        cout << "Cannot divide by 0." << endl;
+        return 1; // Return a non-zero value to indicate error
+    }
+
     int start = 0;
     int end = abs(dividend); // absolute(abs) gives number without any sign
 
-    int ans = 0;
+    double ans = 0;
 
     while (start <= end)
     {
@@ -15,7 +21,8 @@ int divide(int dividend, int divisor)
 
         if (abs(mid * divisor) == abs(dividend))
         {
-            return mid;
+            ans = mid;
+            break;
         }
         if (abs(mid * divisor) < abs(dividend))
         {
@@ -27,27 +34,39 @@ int divide(int dividend, int divisor)
             end = mid - 1;
         }
     }
+
+    // code for decimal point
+    double finalAns = ans;
+    double precise;
+    double step = 0.1;
+    cout << "enter the precision limit :";
+    cin >> precise;
+
+    for (double i = 0; i < precise; i++)
+    {
+        for (double j = finalAns; (j * divisor) <= abs(dividend); j = j + step)
+        {
+            finalAns = j;
+        }
+        step = step / 10;
+    }
+
     if ((dividend > 0 && divisor > 0) || (dividend < 0 && divisor < 0))
     {
-        return ans;
+        return finalAns;
     }
     else
     {
-        return -ans;
+        return -finalAns;
     }
 }
 
 int main()
 {
-    int dividend = 203;
+    int dividend = 59;
     int divisor = 5;
 
-    if (divisor == 0)
-    {
-        cout << "Cannot divide by 0." << endl;
-        return 1; // Return a non-zero value to indicate error
-    }
-    int ans = divide(dividend, divisor);
+    double ans = divide(dividend, divisor);
     cout << "Ans is: " << ans;
 
     return 0;

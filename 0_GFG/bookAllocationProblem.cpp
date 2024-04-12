@@ -1,6 +1,5 @@
 // GFG book allocation problem
 
-
 // class Solution
 // {
 // public:
@@ -10,11 +9,13 @@
 //         int count = 1;
 //         for (int i = 0; i < N; i++)
 //         {
-//             if (A[i] > sol)
-//             { // sol is mid
-//                 return false;
+//             if (A[i] > sol) // sol is mid, suppose first book has page > mid
+//             {
+//                 sol is mid return false;
 //             }
 //             if (pageSum + A[i] > sol)
+//             // suppose two book allocated to 1st stud. giving 3rd book to them
+//             // increases page no. than mid/sol in this case give third book to 2nd student and repeat step
 //             {
 //                 count++;
 //                 pageSum = A[i];
@@ -43,7 +44,7 @@
 //         int end = accumulate(A, A + N, 0); // STL gives sum
 //         int ans = -1;
 
-//         while (start < end)
+//         while (start <= end)
 //         {
 //             int mid = start + (end - start) / 2;
 //             if (isPossibleSolution(A, N, M, mid))
@@ -59,4 +60,3 @@
 //         return ans;
 //     }
 // };
-

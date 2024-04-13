@@ -9,9 +9,9 @@
 //         int count = 1;
 //         for (int i = 0; i < N; i++)
 //         {
-//             if (A[i] > sol) // sol is mid, suppose first book has page > mid
+//             if (A[i] > sol) // mid is sol, suppose first book has pages > mid
 //             {
-//                 sol is mid return false;
+//                return false;
 //             }
 //             if (pageSum + A[i] > sol)
 //             // suppose two book allocated to 1st stud. giving 3rd book to them

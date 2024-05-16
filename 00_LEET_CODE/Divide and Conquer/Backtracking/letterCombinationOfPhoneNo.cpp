@@ -28,7 +28,7 @@
 //             return ans;
 //         }
 //         int index = 0;
-//         string output = "";
+//         string output ="";
 //         vector<string>mapping(10);
 //         mapping[2] = "abc";
 //         mapping[3] = "def";

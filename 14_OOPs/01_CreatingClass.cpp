@@ -14,7 +14,7 @@ class Animal {
 };
 
 int main(){
-    cout<<"Size of empty class is "<<sizeof(Vivek)<<endl;
-    cout<<"Size of non-empty class is "<<sizeof(Animal)<<endl;
+    cout<<"Size of empty class is "<<sizeof(Vivek)<<endl;    //output -> 1
+    cout<<"Size of non-empty class is "<<sizeof(Animal)<<endl; //output -> 12
     return 0;
 }
